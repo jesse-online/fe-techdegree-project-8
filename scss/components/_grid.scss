@@ -1,0 +1,60 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.employees {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    background: $white;
+    padding: .75rem;
+    border: 1.5px solid $color-border;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow .3s ease, transform .3s ease;
+
+    &:hover {
+        box-shadow: 0 0 10px $color-accent;
+        transform: translateY(-5px);
+    }
+
+    &__img {
+        margin-right: 1.25rem;
+        height: 75px;
+        width: 75px;
+    }
+
+    &__email,
+    &__city {
+        margin: .25rem 0;
+        font-size: .65rem;
+    }
+}
+
+@include mq($tablet) {
+    .employees{
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .card {
+        &__email,
+        &__city {
+            font-size: .8rem;
+        }
+    }
+}
+
+@include mq($desktop) {
+    .employees {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

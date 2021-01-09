@@ -1,0 +1,121 @@
+/* ================== */
+/*        Modal       */
+/* ================== */
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        padding: 1rem;
+        width: 24rem;
+        border-radius: 5px;
+    }
+
+    &__closer {
+        align-self: flex-end;
+        font-size: 2rem;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: $color-bg;
+    }
+
+    &__closer:hover {
+        background-color: $color-border;
+    }
+
+    &__img {
+        transition: box-shadow 0.4s ease;
+    }
+
+    &__img:hover {
+        box-shadow: 0 0 10px $color-accent;
+    }
+
+    &__name {
+        margin: 1rem 0 0;
+    }
+
+    &__email,
+    &__city {
+        margin: .5rem 0 0;
+    }
+
+    &__hr {
+        width: 90%;
+        border: none;
+        background: $color-border;
+        color: $color-border;
+        height: 1px;
+        margin-top: 1rem;
+        
+    }
+
+    &__phone {
+        margin: 1rem 0 .5rem;
+    }
+    &__address,
+    &__birthday {
+        margin: .5rem 0 0;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+
+    &__button {
+        flex-basis: 33%;
+        font-size: 1rem;
+        border: none;
+        width: 12rem;
+        height: 3rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background: $color-border;
+        }
+
+        &:active {
+            background: $color-accent;
+        }
+
+        &--previous {
+            justify-self: flex-start;
+        }
+
+        &--next {
+            justify-self: flex-end;
+        }
+    }
+
+    &--show {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+}

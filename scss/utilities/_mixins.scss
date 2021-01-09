@@ -1,0 +1,10 @@
+/* ============================================= */
+/*              Mixins                           */
+/* ============================================= */
+
+// Wrap @content in a media query
+@mixin mq($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
