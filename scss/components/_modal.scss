@@ -25,8 +25,13 @@
         transform: translate(-50%, -50%);
         background-color: $white;
         padding: 1rem;
-        width: 24rem;
+        width: 85%;
         border-radius: 5px;
+
+        a,
+        p {
+            font-size: .75rem;
+        }
     }
 
     &__closer {
@@ -38,14 +43,20 @@
         cursor: pointer;
         border-radius: 5px;
         background-color: $color-bg;
-    }
 
-    &__closer:hover {
-        background-color: $color-border;
+        &:hover {
+            background-color: $color-border;
+        }
+
+        &:active {
+            background-color: $color-accent;
+        }
     }
 
     &__img {
         transition: box-shadow 0.4s ease;
+        height: 75px;
+        width: 75px;
     }
 
     &__img:hover {
@@ -63,10 +74,9 @@
 
     &__hr {
         width: 90%;
-        border: none;
+        border: .5px solid;
         background: $color-border;
         color: $color-border;
-        height: 1px;
         margin-top: 1rem;
         
     }
@@ -83,7 +93,8 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-top: 1rem;
+        max-width: 100%;
+        margin: auto 0;
     }
 
     &__button {
@@ -117,5 +128,55 @@
         visibility: visible;
         transform: scale(1.0);
         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+}
+
+@include mq($phablet) {
+    .modal {
+            
+        &__content {
+            width: 50%;   
+
+            a,
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        &__container {
+            margin-top: 1rem;
+        }
+    }
+}
+
+@include mq($tablet) {
+    .modal {
+            
+        &__content {
+            width: 60%;   
+
+            a,
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        &__container {
+            margin-top: 2rem;
+        }
+    }
+}
+
+@include mq($desktop) {
+    .modal {
+            
+        &__content {
+            width: 40%;
+            
+        }
+
+        &__container {
+            margin-top: 2rem;
+        }
     }
 }
